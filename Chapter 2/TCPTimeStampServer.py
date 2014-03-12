@@ -21,4 +21,4 @@ while True:
             break #break and close connection if message is blank
         tcpCliSock.send('[%s] %s' %(ctime(),data)) # Prepend time stamp
         tcpCliSock.close()
-    tcpSerSock.close()
+    tcpSerSock.close() #close socket
