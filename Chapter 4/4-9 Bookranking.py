@@ -19,14 +19,15 @@ def getRanking(isbn): #Take ISBN,create finalURL and then call urlopen on it
     page.close()
     return REGEX.findall(data)[0]
 
-def showRanking(isbn): # Outputs ISBN and ranking to user
+def _showRanking(isbn): # Outputs ISBN and ranking to user
     print '- %r ranked %s' % (
         ISBNs[isbn], getRanking(isbn))
     
 def main():
     print 'At', ctime(), 'on Amazon...'
     for isbn in ISBNs:
-        showRanking(isbn)
+        #showRanking(isbn)
+        Thread(target=_showRanking,args=(isbn,)).start() #Add multithreading
     print 'All Done at ' ,ctime()
         
 
