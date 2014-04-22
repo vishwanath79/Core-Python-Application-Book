@@ -15,6 +15,7 @@ SIGNS={
     'merging traffic':WARN,
     'one way':REGU,
 }
+#Test
 #Tk dialogs are assigned as button callbacks.
 critCB=lambda:showerror('Error','Error button presssed')
 warnCB=lambda:showwarning('Warning','Warning button pressed')
